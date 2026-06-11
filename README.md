@@ -206,10 +206,30 @@ http://127.0.0.1:5050/health
 1. 把專案推到 GitHub
 2. 到 Vercel 建立 New Project
 3. 選擇這個 GitHub 專案
-4. Framework Preset 可以選 `Other`
-5. 確認 Build Command 是 `npm run build --prefix frontend`
-6. 確認 Output Directory 是 `frontend/dist`
-7. 按下 Deploy
+4. Root Directory 請維持專案根目錄，不要只選 `frontend` 或 `backend`
+5. Framework Preset 可以選 `Other`，不要選 `Services`
+6. 不要把 `experimentalServices` 那段設定貼進 `vercel.json`
+7. 確認 Build Command 是 `npm run build --prefix frontend`
+8. 確認 Output Directory 是 `frontend/dist`
+9. 按下 Deploy
+
+如果 Vercel 跳出類似下面這種設定：
+
+```json
+{
+  "experimentalServices": {
+    "frontend": {
+      "routePrefix": "/"
+    },
+    "backend": {
+      "root": "backend",
+      "routePrefix": "/_/backend"
+    }
+  }
+}
+```
+
+代表 Vercel 可能把專案當成實驗性的多服務專案在處理。這份作業目前不需要這種設定，請回到 Project Settings，把 Framework Preset 改成 `Other`，Root Directory 維持專案根目錄，並使用專案內現有的 `vercel.json`。
 
 ### Vercel 部署注意事項
 
