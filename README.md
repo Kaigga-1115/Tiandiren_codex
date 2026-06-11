@@ -246,6 +246,13 @@ Build Command：npm run build --prefix frontend
 Output Directory：frontend/dist
 ```
 
+目前專案也加了一個防呆設定：
+
+- `backend/frontend` 會指向真正的 `frontend`
+- `backend/api/index.py` 讓 Vercel 如果誤用 `backend` 當根目錄時，也能找到 Flask 入口
+
+所以如果你暫時無法把 Root Directory 改掉，請重新 push 最新程式碼後再 Redeploy 一次。不過長期最推薦的設定仍然是 Root Directory 使用專案根目錄。
+
 如果 Vercel 跳出類似下面這種設定：
 
 ```json
