@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RED - 傳說訓練家介紹</title>
+  <meta name="description" content="RED 的傳說感介紹網站，收錄代表稱號、相關作品、傳說紀錄、寶可夢夥伴與白銀山隊伍。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="pokeball-cursor" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="主導覽">
+      <a class="brand" href="#top">RED 傳說檔案</a>
+      <div class="nav-links">
+        <a href="#about">關於 RED</a>
+        <a href="#companions">寶可夢夥伴</a>
+        <a href="#team">白銀山隊伍</a>
+        <a href="#legend">傳說紀錄</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Legendary Trainer</p>
+        <h1>RED</h1>
+        <p class="role">代表稱號：傳說訓練家</p>
+        <p class="lead">
+          在關都與白銀山之間，RED 的名字被一次次提起。沉默、專注、幾乎不留下多餘話語，
+          卻總在最強的對戰裡證明自己。
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#companions">查看寶可夢夥伴</a>
+          <a class="button button-secondary" href="#legend">查看傳說紀錄</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-hidden="true">
+        <div class="hero-card">
+          <span>角色頭像</span>
+          <img src="角色圖片/Red.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="section-heading">
+        <p class="section-kicker">Profile</p>
+        <h2 id="about-title">關於 RED</h2>
+      </div>
+      <p class="section-copy">
+        RED 是來自真新鎮的訓練家，也是 Kanto 傳說中最具代表性的存在之一。
+        在許多作品裡，他都以沉靜、專注、極少言語的形象出現，像是一位不會主動宣告自己有多強，
+        卻總能在最關鍵的戰鬥中站到最後的角色。
+      </p>
+    </section>
+
+    <section class="section" id="companions" aria-labelledby="companions-title">
+      <div class="section-heading">
+        <p class="section-kicker">Companions</p>
+        <h2 id="companions-title">寶可夢夥伴</h2>
+      </div>
+      <p class="section-copy">
+        這一區先以 RED 最經典、最常被提起的夥伴為主。版面做成橫向切換的隊伍列，
+        方便你左右滑動查看每一隻寶可夢的特點。
+      </p>
+
+      <div class="carousel" aria-label="寶可夢夥伴橫向列表">
+        <article class="card snap">
+          <img src="白銀山隊伍/Pikachu.png" alt="皮卡丘">
+          <div class="card-body">
+            <h3>皮卡丘</h3>
+            <p>RED 最具代表性的夥伴之一，速度快、反應靈活，象徵整體隊伍的核心節奏。</p>
+            <p class="meta">性格特色：活潑、警覺、默契高</p>
+            <p class="meta">配招示意：十萬伏特、電光一閃、鐵尾、伏特攻擊</p>
+          </div>
+        </article>
+
+        <article class="card snap">
+          <img src="白銀山隊伍/Snorlax.png" alt="卡比獸">
+          <div class="card-body">
+            <h3>卡比獸</h3>
+            <p>擅長承受攻勢並穩住戰局，是 RED 隊伍中非常典型的厚實型主力。</p>
+            <p class="meta">性格特色：沉穩、耐打、節奏慢但可靠</p>
+            <p class="meta">配招示意：睡覺、泰山壓頂、重磅衝撞、地震</p>
+          </div>
+        </article>
+
+        <article class="card snap">
+          <img src="白銀山隊伍/Venusaur.png" alt="妙蛙花">
+          <div class="card-body">
+            <h3>妙蛙花</h3>
+            <p>草屬性的穩定代表，兼具控場與續航，常被視為早期經典隊伍的基礎力量。</p>
+            <p class="meta">性格特色：冷靜、耐久、擅長消耗</p>
+            <p class="meta">配招示意：飛葉快刀、藤鞭、陽光烈焰、睡眠粉</p>
+          </div>
+        </article>
+
+        <article class="card snap">
+          <img src="白銀山隊伍/Charizard.png" alt="噴火龍">
+          <div class="card-body">
+            <h3>噴火龍</h3>
+            <p>火焰系的招牌夥伴，輸出鮮明、氣勢強，讓 RED 的隊伍更有壓迫感。</p>
+            <p class="meta">性格特色：高傲、強勢、爆發力高</p>
+            <p class="meta">配招示意：噴射火焰、空氣斬、翅膀攻擊、龍爪</p>
+          </div>
+        </article>
+
+        <article class="card snap">
+          <img src="白銀山隊伍/Blastoise.png" alt="水箭龜">
+          <div class="card-body">
+            <h3>水箭龜</h3>
+            <p>兼具防守與火力的經典夥伴，和前排搭配時很能撐起整體對戰節奏。</p>
+            <p class="meta">性格特色：穩定、冷靜、平衡型</p>
+            <p class="meta">配招示意：水炮、冰凍光束、咬碎、保護</p>
+          </div>
+        </article>
+
+        <article class="card snap">
+          <img src="白銀山隊伍/Espeon.png" alt="太陽伊布">
+          <div class="card-body">
+            <h3>太陽伊布</h3>
+            <p>偏向高速度與精神力的夥伴，讓 RED 的隊伍多了一層優雅但銳利的收尾能力。</p>
+            <p class="meta">性格特色：敏銳、優雅、反應快</p>
+            <p class="meta">配招示意：精神強念、影子球、晨光、速度互換</p>
+          </div>
+        </article>
+      </div>
+      <p class="hint">左右滑動即可查看更多夥伴</p>
+    </section>
+
+    <section class="section" id="team" aria-labelledby="team-title">
+      <div class="section-heading">
+        <p class="section-kicker">Mt. Silver Team</p>
+        <h2 id="team-title">白銀山上的六隻天王級寶可夢</h2>
+      </div>
+      <p class="section-copy">
+        這裡以白銀山經典對戰為主，做成六宮格展示，讓你可以直接看到 RED 最標誌性的戰力配置。
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <img src="白銀山隊伍/Pikachu.png" alt="皮卡丘">
+          <div class="card-body">
+            <h3>皮卡丘</h3>
+            <p>RED 隊伍最具辨識度的存在，速度與節奏感都很強。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="白銀山隊伍/Snorlax.png" alt="卡比獸">
+          <div class="card-body">
+            <h3>卡比獸</h3>
+            <p>高耐久代表，常在對戰中負責吸收攻勢與拉長戰線。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="白銀山隊伍/Venusaur.png" alt="妙蛙花">
+          <div class="card-body">
+            <h3>妙蛙花</h3>
+            <p>穩定的草系主力，兼具輸出與控場。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="白銀山隊伍/Charizard.png" alt="噴火龍">
+          <div class="card-body">
+            <h3>噴火龍</h3>
+            <p>高壓迫感的火系核心，氣勢非常鮮明。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="白銀山隊伍/Blastoise.png" alt="水箭龜">
+          <div class="card-body">
+            <h3>水箭龜</h3>
+            <p>水系厚實主力，讓隊伍的攻防更完整。</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="白銀山隊伍/Espeon.png" alt="太陽伊布">
+          <div class="card-body">
+            <h3>太陽伊布</h3>
+            <p>象徵精神力與速度的高級感收尾角色。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="legend" aria-labelledby="legend-title">
+      <div class="section-heading">
+        <p class="section-kicker">Legend</p>
+        <h2 id="legend-title">傳說紀錄</h2>
+      </div>
+      <div class="record-list">
+        <article class="record">
+          <h3>關都冠軍</h3>
+          <p>RED 被視為來自真新鎮的傳奇訓練家，也是關都地區最具代表性的勝利者之一。</p>
+        </article>
+        <article class="record">
+          <h3>白銀山修行者</h3>
+          <p>在白銀山獨自訓練的設定，讓 RED 的形象更像一名將自己推到極限的孤高訓練家。</p>
+        </article>
+        <article class="record">
+          <h3>沉默的強者</h3>
+          <p>他不是靠大量台詞建立存在感，而是靠戰鬥、位置和氛圍本身讓人記住。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 RED 傳說檔案. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
