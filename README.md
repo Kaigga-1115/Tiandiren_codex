@@ -213,6 +213,39 @@ http://127.0.0.1:5050/health
 8. 確認 Output Directory 是 `frontend/dist`
 9. 按下 Deploy
 
+### 如果 Vercel 顯示 Root Directory 是 backend
+
+如果畫面上出現：
+
+```text
+Tiandiren_codex / backend
+Root Directory: backend
+```
+
+請一定要按旁邊的 `Edit`，把 Root Directory 改成專案根目錄。
+
+也就是說，不要讓 Vercel 從 `backend/` 開始 build，因為這樣它會去找：
+
+```text
+backend/frontend/package.json
+```
+
+但真正的前端在：
+
+```text
+frontend/package.json
+```
+
+正確設定應該是：
+
+```text
+Root Directory：留空或選 Tiandiren_codex 專案根目錄
+Framework Preset：Other
+Install Command：npm install --prefix frontend
+Build Command：npm run build --prefix frontend
+Output Directory：frontend/dist
+```
+
 如果 Vercel 跳出類似下面這種設定：
 
 ```json
