@@ -90,7 +90,7 @@ img { width: 100%; height: auto; }
 
 .hero {
   position: relative;
-  min-height: min(820px, calc(100svh - 76px));
+  min-height: min(760px, calc(100svh - 96px));
   padding: 0;
   overflow: hidden;
 }
@@ -274,7 +274,7 @@ img { width: 100%; height: auto; }
 
 .hero-frame-floating {
   width: min(56vw, 700px);
-  height: min(84svh, 980px);
+  height: min(78svh, 760px);
   margin-left: 0;
   margin-bottom: 0;
   justify-self: end;

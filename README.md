@@ -54,9 +54,9 @@ personal-brand-site/
 
 圖片請放在對應資料夾內。
 
-### 商品圖片
+### 角色圖片
 
-商品圖片放在：
+RED 的角色圖片放在：
 
 ```text
 frontend/角色圖片
@@ -86,7 +86,7 @@ frontend/經歷圖片
 
 ### 新增商品時要注意
 
-如果之後你要新增商品，前端表單中的「圖片檔名」要跟資料夾內的檔名一致。
+如果之後你要新增寶可夢圖鑑，前端表單中的「圖片檔名」要跟 `frontend/經歷圖片` 裡的檔名一致。
 
 ### 新增經歷時要注意
 
@@ -192,6 +192,35 @@ http://127.0.0.1:5050/health
 
 ---
 
+## 如何部署到 Vercel
+
+這個專案已經補上 Vercel 需要的基本設定：
+
+- `vercel.json`：告訴 Vercel 要 build `frontend/`
+- `api/index.py`：讓 Vercel 可以找到 Flask 後端入口
+- `requirements.txt`：讓 Vercel 安裝 Flask 需要的 Python 套件
+- `package.json`：讓根目錄可以執行前端 build
+
+如果要部署到 Vercel，通常流程是：
+
+1. 把專案推到 GitHub
+2. 到 Vercel 建立 New Project
+3. 選擇這個 GitHub 專案
+4. Framework Preset 可以選 `Other`
+5. 確認 Build Command 是 `npm run build --prefix frontend`
+6. 確認 Output Directory 是 `frontend/dist`
+7. 按下 Deploy
+
+### Vercel 部署注意事項
+
+目前後端在本機會把新增資料保存到 `backend/data.json`。
+
+但 Vercel 的 serverless 環境不適合把 JSON 當成永久資料庫使用，所以部署後新增資料可以回應成功，但資料不一定能像本機一樣永久保存。
+
+如果未來要讓 Vercel 上的資料真的長期保存，下一步建議接資料庫，例如 Supabase、Neon、Firebase 或其他雲端資料庫。
+
+---
+
 ## 如何新增商品
 
 目前網站前端已經有「新增商品」功能。
@@ -263,8 +292,8 @@ http://127.0.0.1:5050/health
 
 你可以先確認：
 
-- 商品圖片放在 `frontend/角色圖片`
-- 經歷圖片放在 `frontend/經歷圖片`
+- RED 角色圖片放在 `frontend/角色圖片`
+- 寶可夢與經歷圖片放在 `frontend/經歷圖片`
 
 ---
 
