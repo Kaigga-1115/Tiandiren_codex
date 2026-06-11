@@ -1,15 +1,28 @@
 import { useMemo, useState, useEffect } from "react";
 import pikachuImg from "../經歷圖片/Pikachu.png";
-import { redPortraits, redProfile, companions, records } from "./data";
+import { redPortraits, redProfile, companions, records, imageRegistry } from "./data";
 
-function resolveImagePath(folder, filename, fallback) {
+function resolveImagePath(filename, fallback) {
   if (!filename) return fallback;
   if (filename.startsWith("http://") || filename.startsWith("https://")) return filename;
-  try {
-    return new URL(`../${folder}/${filename}`, import.meta.url).href;
-  } catch {
-    return fallback;
-  }
+  return imageRegistry[filename] || fallback;
+}
+
+function toDisplayCompanion(item) {
+  return {
+    ...item,
+    image: resolveImagePath(item.image, pikachuImg),
+  };
+}
+
+function toDisplayRecord(item) {
+  return {
+    ...item,
+    image: resolveImagePath(item.image, pikachuImg),
+    value: item.value || item.year,
+    text: item.text || item.intro,
+    accent: item.accent || item.result,
+  };
 }
 
 function App() {
@@ -72,26 +85,14 @@ function App() {
         const remoteRecords = await recordsResponse.json();
 
         setCompanionsList(
-          remoteCompanions.map((item) => ({
-            ...item,
-            image: resolveImagePath("商品圖片", item.image, pikachuImg),
-          }))
+          remoteCompanions.map(toDisplayCompanion)
         );
         setRecordsList(
-          remoteRecords.map((item) => ({
-            ...item,
-            image: resolveImagePath("經歷圖片", item.image, pikachuImg),
-            value: item.year,
-            text: item.intro,
-            accent: item.result,
-          }))
+          remoteRecords.map(toDisplayRecord)
         );
         setActiveCompanion(
           remoteCompanions.length > 0
-            ? {
-                ...remoteCompanions[0],
-                image: resolveImagePath("商品圖片", remoteCompanions[0].image, pikachuImg),
-              }
+            ? toDisplayCompanion(remoteCompanions[0])
             : companions[0]
         );
       } catch {
@@ -169,7 +170,7 @@ function App() {
       .then((savedCompanion) => {
         const displayCompanion = {
           ...savedCompanion,
-          image: resolveImagePath("商品圖片", savedCompanion.image, pikachuImg),
+          image: resolveImagePath(savedCompanion.image, pikachuImg),
         };
         setCompanionsList((current) => [...current, displayCompanion]);
         setActiveCompanion(displayCompanion);
@@ -218,7 +219,7 @@ function App() {
       .then((savedRecord) => {
         const displayRecord = {
           ...savedRecord,
-          image: resolveImagePath("經歷圖片", savedRecord.image, pikachuImg),
+          image: resolveImagePath(savedRecord.image, pikachuImg),
           value: savedRecord.year,
           text: savedRecord.intro,
           accent: savedRecord.result,
@@ -382,7 +383,7 @@ function App() {
               )}
               <div className="companion-strip">{companionCards}</div>
             </div>
-            <aside className="detail-panel">
+            <aside className="detail-panel" key={activeCompanion.name}>
               <p className="panel-kicker">傳說檔案卷宗</p>
               <h3>{activeCompanion.name}</h3>
               <p className="panel-intro">{activeCompanion.intro}</p>

@@ -26,6 +26,29 @@ export const redPortraits = [
   },
 ];
 
+const imageModules = import.meta.glob(["../角色圖片/*", "../經歷圖片/*"], {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const autoImageRegistry = Object.fromEntries(
+  Object.entries(imageModules).map(([path, image]) => [path.split("/").pop(), image])
+);
+
+export const imageRegistry = {
+  ...autoImageRegistry,
+  "Red-FRLG.png": redPortraitFRLG,
+  "Red-LetsGo.png": redPortraitLetsGo,
+  "Red-SunMoon.png": redPortraitSunMoon,
+  "Pikachu.png": pikachuImg,
+  "Snorlax.png": snorlaxImg,
+  "Venusaur.png": venusaurImg,
+  "Charizard.png": charizardImg,
+  "Blastoise.png": blastoiseImg,
+  "Espeon.png": espeonImg,
+};
+
 export const redProfile = {
   name: "RED",
   title: "傳說訓練家",
